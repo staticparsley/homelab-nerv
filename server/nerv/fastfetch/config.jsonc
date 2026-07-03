@@ -1,0 +1,25 @@
+{
+
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+	  "type": "file",
+	  "source": "/home/ruben/.config/fastfetch/nerv.txt"
+  },
+  "modules": [
+    "separator",
+    "os",
+    {
+	    "type": "command",
+	    "key": "Hostname",
+	    "text": "hostname"
+    },
+    "kernel",
+    "uptime",
+    "cpu",
+    "memory",
+    "disk",
+    "localip",
+    "break",
+    "colors"
+  ]
+}

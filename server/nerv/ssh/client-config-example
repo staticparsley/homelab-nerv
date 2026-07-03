@@ -1,0 +1,7 @@
+Host github.com
+  AddKeysToAgent yes
+  IdentityFile [path to file]
+
+Host nerv
+    HostName [IP]
+    User [user]
