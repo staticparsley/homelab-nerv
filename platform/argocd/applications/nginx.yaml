@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/staticparsley92/homelab-nerv.git
+    repoURL: https://github.com/staticparsley/homelab-nerv.git
     targetRevision: main
     path: apps/nginx
 
