@@ -1,0 +1,3 @@
+- install kubeadm
+- install kubectl
+- install kubelet
