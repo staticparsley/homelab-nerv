@@ -14,10 +14,8 @@ spec:
       releaseName: ingress-nginx
       values: |
         controller:
-          hostPort:
-            enabled: true
           service:
-            type: ClusterIp
+            type: NodePort
 
   destination:
     server: https://kubernetes.default.svc
