@@ -6,3 +6,5 @@ metadata:
 spec:
   ipAddressPools:
     - nerv-pool
+  interfaces:
+    - enp3s0
