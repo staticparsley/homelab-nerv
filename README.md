@@ -19,3 +19,20 @@ Source of truth for the `nerv` homelab server.
 5. Argo CD
 6. Monitoring
 7. Applications
+
+## Progress
+
+- [x] Ubuntu Server
+- [x] SSH
+- [x] Static DHCP
+- [x] LVM expansion
+- [x] Git repository
+- [x] containerd
+- [x] Kubernetes host preparation
+- [x] kubeadm
+- [x] Kubernetes control plane
+- [x] Cilium
+- [ ] GitOps
+- [ ] Argo CD
+- [ ] Monitoring
+- [ ] Applications
