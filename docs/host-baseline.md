@@ -1,0 +1,4 @@
+- installed via apt
+- configuration location: /etc/containerd/config.toml
+- SystemdCgroup = true
+- Service managed by `systemd`
