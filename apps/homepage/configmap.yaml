@@ -10,10 +10,6 @@ data:
             href: https://argocd.nerv.local
             description: GitOps dashboard
             icon: argo-cd.png
-        - NGINX Demo:
-            href: https://nginx.nerv.local
-            description: Test app
-            icon: nginx.png
         - Who Am I:
             href: https://whoami.nerv.local
             description: Who Am I
