@@ -42,16 +42,7 @@ spec:
           work:
             enabled: true
             size: 2Gi
-        probes:
-          startup:
-            httpGet:
-              port: "80"
-          liveness:
-            httpGet:
-              port: "80"
-          readiness:
-            httpGet:
-              port: "80"      
+   
 
   destination:
     server: https://kubernetes.default.svc
