@@ -1,38 +1,32 @@
 # homelab-nerv
 
-Source of truth for the `nerv` homelab server.
+GitOps-managed Kubernetes homelab running on Ubuntu.
 
-## Host
+## Platform
 
-- Hostname: nerv
-- Hardware: Beelink EQ, Intel N150, 16GB RAM, 500GB SSD
-- OS: Ubuntu Server
-- Access: SSH key auth via `ssh nerv`
-- Network: static DHCP lease
+- kubeadm
+- containerd
+- Cilium
+- Argo CD
+- ingress-nginx
+- MetalLB
+- cert-manager
 
-## Roadmap
+## Applications
 
-1. Ubuntu baseline
-2. containerd
-3. Kubernetes
-4. GitOps
-5. Argo CD
-6. Monitoring
-7. Applications
+- nginx-demo
+- (coming soon) Homepage
+- (coming soon) Grafana
+- (coming soon) Photo of the Day
 
-## Progress
+## Workflow
 
-- [x] Ubuntu Server
-- [x] SSH
-- [x] Static DHCP
-- [x] LVM expansion
-- [x] Git repository
-- [x] containerd
-- [x] Kubernetes host preparation
-- [x] kubeadm
-- [x] Kubernetes control plane
-- [x] Cilium
-- [ ] GitOps
-- [ ] Argo CD
-- [ ] Monitoring
-- [ ] Applications
+Cursor
+↓
+Git Commit
+↓
+GitHub
+↓
+Argo CD
+↓
+Kubernetes
