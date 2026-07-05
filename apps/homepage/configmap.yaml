@@ -14,7 +14,7 @@ data:
             href: https://nginx.nerv.local
             description: Test app
             icon: nginx.png
-        - NGINX Demo:
+        - Who Am I:
             href: https://whoami.nerv.local
             description: Who Am I
             icon: nginx.png
