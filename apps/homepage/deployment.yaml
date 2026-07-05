@@ -16,20 +16,59 @@ spec:
       containers:
         - name: homepage
           image: ghcr.io/gethomepage/homepage:latest
+          imagePullPolicy: IfNotPresent
+
           ports:
             - containerPort: 3000
+
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
               value: homepage.nerv.local
+
           volumeMounts:
             - name: homepage-config
-              mountPath: /app/config
-              readOnly: true
+              mountPath: /app/config/services.yaml
+              subPath: services.yaml
+
+            - name: homepage-config
+              mountPath: /app/config/bookmarks.yaml
+              subPath: bookmarks.yaml
+
+            - name: homepage-config
+              mountPath: /app/config/settings.yaml
+              subPath: settings.yaml
+
+            - name: homepage-config
+              mountPath: /app/config/widgets.yaml
+              subPath: widgets.yaml
+
+            - name: homepage-config
+              mountPath: /app/config/kubernetes.yaml
+              subPath: kubernetes.yaml
+
+            - name: homepage-config
+              mountPath: /app/config/docker.yaml
+              subPath: docker.yaml
+
+            - name: homepage-config
+              mountPath: /app/config/proxmox.yaml
+              subPath: proxmox.yaml
+
+            - name: homepage-config
+              mountPath: /app/config/custom.css
+              subPath: custom.css
+
+            - name: homepage-config
+              mountPath: /app/config/custom.js
+              subPath: custom.js
+
             - name: homepage-logs
               mountPath: /app/config/logs
+
       volumes:
         - name: homepage-config
           configMap:
             name: homepage-config
+
         - name: homepage-logs
           emptyDir: {}
