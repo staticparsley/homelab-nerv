@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://repo.helmforge.dev
     chart: adguard-home
-    targetRevision: 1.0.4
+    targetRevision: 1.4.12
     helm:
       releaseName: adguard-home
       values: |
