@@ -12,6 +12,10 @@ data:
         - NGINX Demo:
             href: https://nginx.nerv.local
             description: Test app
+    - Observability:
+        - Grafana:
+            href: https://grafana.nerv.local
+            description: Cluster dashboards
 
   bookmarks.yaml: |
     - Homelab:
