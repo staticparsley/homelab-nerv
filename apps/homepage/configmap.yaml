@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+  namespace: homepage
+data:
+  services.yaml: |
+    - Platform:
+        - Argo CD:
+            href: https://localhost:8080
+            description: GitOps dashboard
+        - NGINX Demo:
+            href: https://nginx.nerv.local
+            description: Test app
+
+  bookmarks.yaml: |
+    - Homelab:
+        - GitHub Repo:
+            - abbr: GH
+              href: https://github.com/staticparsley/homelab-nerv
+
+  settings.yaml: |
+    title: nerv
+    theme: dark
+    color: slate
+    layout:
+      Platform:
+        style: row
+        columns: 2
+
+  widgets.yaml: |
+    - resources:
+        cpu: true
+        memory: true
+        disk: /
+
+  kubernetes.yaml: |
+    mode: cluster
+
+  docker.yaml: |
