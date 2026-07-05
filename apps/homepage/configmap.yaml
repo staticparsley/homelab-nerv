@@ -7,7 +7,7 @@ data:
   services.yaml: |
     - Platform:
         - Argo CD:
-            href: https://localhost:8080
+            href: https://argocd.nerv.local
             description: GitOps dashboard
         - NGINX Demo:
             href: https://nginx.nerv.local
