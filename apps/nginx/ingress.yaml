@@ -5,6 +5,10 @@ metadata:
   namespace: nginx-demo
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+       - nginx.nerv.local
+      secretName: nginx-demo-tls
   rules:
     - host: nginx.nerv.local
       http:
