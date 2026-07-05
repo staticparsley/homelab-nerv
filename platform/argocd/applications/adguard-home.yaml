@@ -17,6 +17,7 @@ spec:
           web:
             type: ClusterIP
             port: 80
+            targetPort: 80
           dns:
             type: LoadBalancer
             port: 53
