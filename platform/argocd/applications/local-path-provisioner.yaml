@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: local-path-provisioner
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://charts.containeroo.ch
+    chart: local-path-provisioner
+    targetRevision: 0.0.33
+    helm:
+      releaseName: local-path-provisioner
+      values: |
+        storageClass:
+          defaultClass: true
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: local-path-storage
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
