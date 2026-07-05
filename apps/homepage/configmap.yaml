@@ -9,34 +9,75 @@ data:
         - Argo CD:
             href: https://argocd.nerv.local
             description: GitOps dashboard
+            icon: argo-cd.png
         - NGINX Demo:
             href: https://nginx.nerv.local
             description: Test app
+            icon: nginx.png
     - Observability:
         - Grafana:
             href: https://grafana.nerv.local
             description: Cluster dashboards
+            icon: grafana.png
+    - Coming Soon:
+        - Prometheus: 
+            description: Metrics
+            icon: prometheus.png
+        - Jellyfin:
+            description: Media server
+            icon: jellyfin.png
+        - Photo of the Day: 
+            description: Personal project
+            icon: camera.png
 
   bookmarks.yaml: |
     - Homelab:
         - GitHub Repo:
             - abbr: GH
               href: https://github.com/staticparsley/homelab-nerv
+        - RubenMarin.dev:
+            - abbr: DEV 
+              href: https://rubenmarin.dev
+        - RMarinPhoto:
+            - abbr: PHOTO 
+              href: https://rmarinphoto.com
 
   settings.yaml: |
-    title: nerv
+    title: Nerv
     theme: dark
     color: slate
+    headerStyle: boxed
     layout:
       Platform:
         style: row
         columns: 2
+      Observability:
+        style: row
+        columns: 2
+      Coming Soon:
+        style: row
+        columns: 2
+    providers:
+      openweathermap: false
+    quicklaunch:
+      searchDescriptions: true
+      hideInternetSearch: false
 
   widgets.yaml: |
+    - datetime:
+        text_size: xl
+        format:
+          timeStyle: short
+          dateStyle: long
+
     - resources:
         cpu: true
         memory: true
         disk: /
+    
+    - search: 
+        provider: duckduckgo
+        target: _blank
 
   proxmox.yaml: |
 
