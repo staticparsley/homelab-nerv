@@ -34,7 +34,13 @@ data:
         memory: true
         disk: /
 
+  proxmox.yaml: |
+
   kubernetes.yaml: |
     mode: cluster
 
   docker.yaml: |
+
+  custom.css: |
+
+  custom.js: |
