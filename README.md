@@ -14,9 +14,9 @@ GitOps-managed Kubernetes homelab running on Ubuntu.
 
 ## Applications
 
-- nginx-demo
-- (coming soon) Homepage
-- (coming soon) Grafana
+- whoami
+- Homepage
+- Grafana
 - (coming soon) Photo of the Day
 
 ## Workflow
@@ -30,3 +30,19 @@ GitHub
 Argo CD
 ↓
 Kubernetes
+
+Internet
+│
+▼
+Verizon Router
+│
+▼
+MetalLB
+│
+▼
+Ingress
+│
+┌────┴───────────┐
+│ │
+Homepage Grafana
+AdGuard Argo CD

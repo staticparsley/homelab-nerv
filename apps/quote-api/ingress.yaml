@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quote-api
+  namespace: homepage
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - quote.nerv.local
+      secretName: quote-api-tls
+  rules:
+    - host: quote.nerv.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: quote-api
+                port:
+                  number: 80

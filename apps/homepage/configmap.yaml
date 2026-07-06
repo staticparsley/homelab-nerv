@@ -20,9 +20,6 @@ data:
             description: Cluster dashboards
             icon: grafana.png
     - Coming Soon:
-        - Prometheus: 
-            description: Metrics
-            icon: prometheus.png
         - Jellyfin:
             description: Media server
             icon: jellyfin.png
