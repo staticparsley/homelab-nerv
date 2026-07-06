@@ -4,6 +4,12 @@ metadata:
   name: quote-api
   namespace: argocd
 spec:
+  writeBackConfig:
+    method: git
+    gitConfig:
+      branch: main
+      writeBackTarget: kustomization
+
   applicationRefs:
     - namePattern: quote-api
       images:
