@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   writeBackConfig:
-    method: git:secret:argocd/image-updater-git-creds
+    method: git:secret:argocd/image-updater-git-creds#creds
     gitConfig:
       branch: main
       writeBackTarget: kustomization
