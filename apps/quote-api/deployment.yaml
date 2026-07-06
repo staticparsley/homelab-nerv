@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: quote-api
-          image: ghcr.io/staticparsley/quote-api:latest
+          image: ghcr.io/staticparsley/quote-api
           ports:
             - containerPort: 3000
           readinessProbe:
