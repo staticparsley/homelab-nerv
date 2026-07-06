@@ -5,10 +5,10 @@ metadata:
   namespace: argocd
 spec:
   writeBackConfig:
-    method: git:secret:argocd/image-updater-git-creds#creds
+    method: git:secret:argocd/image-updater-git-creds
     gitConfig:
       branch: main
-      writeBackTarget: kustomization
+      writeBackTarget: kustomization:apps/quote-api
 
   applicationRefs:
     - namePattern: quote-api
