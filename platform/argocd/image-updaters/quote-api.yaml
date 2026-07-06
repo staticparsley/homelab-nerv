@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   applicationRefs:
-    - name: quote-api
+    - namePattern: quote-api
       images:
         - alias: quote-api
           imageName: ghcr.io/staticparsley/quote-api
