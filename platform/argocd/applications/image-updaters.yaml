@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: quote-api
+  name: image-updaters
   namespace: argocd
 spec:
   project: default
@@ -9,11 +9,11 @@ spec:
   source:
     repoURL: https://github.com/staticparsley/homelab-nerv.git
     targetRevision: main
-    path: apps/quote-api
+    path: platform/argocd/image-updaters
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: homepage
+    namespace: argocd
 
   syncPolicy:
     automated:
