@@ -20,7 +20,7 @@ data:
             icon: mdi-format-quote-close
             widget:
               type: customapi
-              url: http://quote-api.homepage.svc.cluster.local/api/quote
+              url: http://quote-api.homepage.svc.cluster.local/quote
               method: GET
               headers:
                 Accept: application/json
