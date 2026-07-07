@@ -22,6 +22,8 @@ data:
               type: customapi
               url: http://quote-api.homepage.svc.cluster.local/quote
               method: GET
+              headers:
+                Accept: application/json
               mappings:
                 - field: text
                   label: Quote
