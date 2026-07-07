@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: quote-api
   namespace: homepage
+  labels:
+    app: quote-api
 spec:
   type: ClusterIP
   selector:
