@@ -14,6 +14,19 @@ data:
             href: https://whoami.nerv.local
             description: Who Am I
             icon: nginx.png
+        - Quote API:
+            href: https://quote.nerv.local
+            description: Random NERV quote service
+            icon: mdi-format-quote-close
+            widget:
+              type: customapi
+              url: http://quote-api.homepage.svc.cluster.local/quote
+              method: GET
+              mappings:
+                - field: text
+                  label: Quote
+                - field: source
+                  label: Source
     - Observability:
         - Grafana:
             href: https://grafana.nerv.local
