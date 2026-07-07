@@ -3,6 +3,7 @@ resources:
   - service.yaml
   - ingress.yaml
   - certificate.yaml
+  - servicemonitor.yaml
 images:
   - name: ghcr.io/staticparsley/quote-api
     newTag: v0.1.1
