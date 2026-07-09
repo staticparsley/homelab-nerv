@@ -6,49 +6,52 @@ metadata:
 data:
   services.yaml: |
     - Infrastructure:
-      - Headlamp:
-          href: https://headlamp.nerv.local
-          description: Headlamp web interface
-          icon: headlamp.png
-      - Argo CD:
-          href: https://argocd.nerv.local
-          description: GitOps dashboard
-          icon: argo-cd.png
+        - Headlamp:
+            href: https://headlamp.nerv.local
+            description: Headlamp web interface
+            icon: headlamp.png
+        - Argo CD:
+            href: https://argocd.nerv.local
+            description: GitOps dashboard
+            icon: argo-cd.png
+
     - Observability:
-      - Grafana:
-        href: https://grafana.nerv.local
-        description: Cluster dashboards
-        icon: grafana.png
+        - Grafana:
+            href: https://grafana.nerv.local
+            description: Cluster dashboards
+            icon: grafana.png
+
     - Applications:
-      - Who Am I:
-          href: https://whoami.nerv.local
-          description: Who Am I
-          icon: nginx.png
-      - Quote API:
-          href: https://quote.nerv.local
-          description: Random NERV quote service
-          icon: mdi-format-quote-close
-          widget:
-            type: customapi
-            url: http://quote-api.homepage.svc.cluster.local/quote
-            method: GET
-            headers:
-              Accept: application/json
+        - Who Am I:
+            href: https://whoami.nerv.local
+            description: Who Am I
+            icon: nginx.png
+        - Quote API:
+            href: https://quote.nerv.local
+            description: Random NERV quote service
+            icon: mdi-format-quote-close
+            widget:
+              type: customapi
+              url: http://quote-api.homepage.svc.cluster.local/quote
+              method: GET
+              headers:
+                Accept: application/json
               mappings:
                 - field: text
                   label: Quote
                 - field: source
                   label: Source
+
     - Coming Soon:
         - Jellyfin:
             description: Media server
             icon: jellyfin.png
-        - Photo of the Day: 
+        - Photo of the Day:
             description: Personal project
             icon: camera.png
 
   bookmarks.yaml: |
-    - Homelab:
+    - Personal:
         - GitHub Repo:
             - abbr: GH
               href: https://github.com/staticparsley/homelab-nerv
@@ -65,10 +68,13 @@ data:
     color: slate
     headerStyle: boxed
     layout:
-      Platform:
+      Infrastructure:
         style: row
         columns: 2
       Observability:
+        style: row
+        columns: 2
+      Applications:
         style: row
         columns: 2
       Coming Soon:
