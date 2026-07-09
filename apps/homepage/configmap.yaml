@@ -20,6 +20,10 @@ data:
             href: https://grafana.nerv.local
             description: Cluster dashboards
             icon: grafana.png
+        - Prometheus:
+            href: https://prometheus.nerv.local
+            description: Cluster metrics
+            icon: prometheus.png
 
     - Applications:
         - Who Am I:
