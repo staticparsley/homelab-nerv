@@ -5,35 +5,40 @@ metadata:
   namespace: homepage
 data:
   services.yaml: |
-    - Platform:
-        - Argo CD:
-            href: https://argocd.nerv.local
-            description: GitOps dashboard
-            icon: argo-cd.png
-        - Who Am I:
-            href: https://whoami.nerv.local
-            description: Who Am I
-            icon: nginx.png
-        - Quote API:
-            href: https://quote.nerv.local
-            description: Random NERV quote service
-            icon: mdi-format-quote-close
-            widget:
-              type: customapi
-              url: http://quote-api.homepage.svc.cluster.local/quote
-              method: GET
-              headers:
-                Accept: application/json
+    - Infrastructure:
+      - Headlamp:
+          href: https://headlamp.nerv.local
+          description: Headlamp web interface
+          icon: headlamp.png
+      - Argo CD:
+          href: https://argocd.nerv.local
+          description: GitOps dashboard
+          icon: argo-cd.png
+    - Observability:
+      - Grafana:
+        href: https://grafana.nerv.local
+        description: Cluster dashboards
+        icon: grafana.png
+    - Applications:
+      - Who Am I:
+          href: https://whoami.nerv.local
+          description: Who Am I
+          icon: nginx.png
+      - Quote API:
+          href: https://quote.nerv.local
+          description: Random NERV quote service
+          icon: mdi-format-quote-close
+          widget:
+            type: customapi
+            url: http://quote-api.homepage.svc.cluster.local/quote
+            method: GET
+            headers:
+              Accept: application/json
               mappings:
                 - field: text
                   label: Quote
                 - field: source
                   label: Source
-    - Observability:
-        - Grafana:
-            href: https://grafana.nerv.local
-            description: Cluster dashboards
-            icon: grafana.png
     - Coming Soon:
         - Jellyfin:
             description: Media server
