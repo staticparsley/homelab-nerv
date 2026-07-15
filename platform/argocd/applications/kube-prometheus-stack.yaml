@@ -37,8 +37,8 @@ spec:
               client_secret: $__env{GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET}
               scopes: openid profile email groups
               auth_url: https://authentik.nerv.local/application/o/authorize/
-              token_url: https://authentik.nerv.local/application/o/token/
-              api_url: https://authentik.nerv.local/application/o/userinfo/
+              token_url: http://authentik-server.authentik.svc.cluster.local/application/o/token/
+              api_url: http://authentik-server.authentik.svc.cluster.local/application/o/userinfo/
               use_pkce: true
           
         prometheus:
