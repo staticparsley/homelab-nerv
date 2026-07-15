@@ -6,6 +6,8 @@ id_ed25519
 .env
 ,env.*
 secrets/
+!/platform/authentik/secrets/
+!/platform/authentik/secrets/**
 *.kubeconfig
 kubeconfig*
 
