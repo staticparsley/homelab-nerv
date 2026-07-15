@@ -40,6 +40,7 @@ spec:
               token_url: http://authentik-server.authentik.svc.cluster.local/application/o/token/
               api_url: http://authentik-server.authentik.svc.cluster.local/application/o/userinfo/
               use_pkce: true
+              auth_style: InParams
           
         prometheus:
           prometheusSpec:
