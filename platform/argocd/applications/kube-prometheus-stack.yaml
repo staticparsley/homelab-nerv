@@ -24,7 +24,22 @@ spec:
               - secretName: grafana-tls
                 hosts:
                   - grafana.nerv.local
-
+          grafana.ini:
+            server:
+              root_url: https://grafana.nerv.local
+            auth.generic_oauth:
+              enabled: true
+              name: Authentik
+              allow_sign_up: true
+              auto_login: false
+              client_id: $__env{GF_AUTH_GENERIC_OAUTH_CLIENT_ID}
+              client_secret: $__env{GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET}
+              scopes: openid profile email groups
+              auth_url: https://authentik.nerv.local/application/o/authorize/
+              token_url: https://authentik.nerv.local/application/o/token/
+              api_url: https://authentik.nerv.local/application/o/userinfo/
+              use_pkce: true
+          
         prometheus:
           prometheusSpec:
             retention: 7d

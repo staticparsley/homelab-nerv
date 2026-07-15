@@ -8,6 +8,8 @@ id_ed25519
 secrets/
 !/platform/authentik/secrets/
 !/platform/authentik/secrets/**
+!/platform/monitoring/secrets/
+!/platform/monitoring/secrets/**
 *.kubeconfig
 kubeconfig*
 
