@@ -15,7 +15,7 @@ spec:
       values: |
         grafana:
           enabled: true
-          envFromSecret: gradana-authentik-oauth
+          envFromSecret: grafana-authentik-oauth
           ingress:
             enabled: true
             ingressClassName: nginx
