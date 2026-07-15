@@ -1,0 +1,83 @@
+# yaml-language-server: disable
+# Strategic merge patch; required Deployment fields come from the upstream base.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-repo-server
+spec:
+  template:
+    spec:
+      initContainers:
+        - name: install-ksops
+          image: viaductoss/ksops:v4.5.1
+          command:
+            - /usr/local/bin/ksops
+            - install
+            - --with-kustomize
+            - /custom-tools
+          volumeMounts:
+            - name: custom-tools
+              mountPath: /custom-tools
+
+      containers:
+        - name: ksops
+          image: quay.io/argoproj/argocd:v3.4.4
+          command:
+            - /var/run/argocd/argocd-cmp-server
+          env:
+            - name: PATH
+              value: /custom-tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+            - name: SOPS_AGE_KEY_FILE
+              value: /home/argocd/.config/sops/age/keys.txt
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 999
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
+          volumeMounts:
+            - name: var-files
+              mountPath: /var/run/argocd
+
+            - name: plugins
+              mountPath: /home/argocd/cmp-server/plugins
+
+            - name: cmp-ksops-config
+              mountPath: /home/argocd/cmp-server/config/plugin.yaml
+              subPath: plugin.yaml
+              readOnly: true
+
+            - name: custom-tools
+              mountPath: /custom-tools
+              readOnly: true
+
+            - name: cmp-ksops-tmp
+              mountPath: /tmp
+
+            - name: sops-age
+              mountPath: /home/argocd/.config/sops/age/keys.txt
+              subPath: keys.txt
+              readOnly: true
+
+      volumes:
+        - name: custom-tools
+          emptyDir: {}
+
+        - name: cmp-ksops-config
+          configMap:
+            name: argocd-cmp-ksops
+
+        - name: cmp-ksops-tmp
+          emptyDir: {}
+
+        - name: sops-age
+          secret:
+            secretName: sops-age
+            items:
+              - key: keys.txt
+                path: keys.txt
