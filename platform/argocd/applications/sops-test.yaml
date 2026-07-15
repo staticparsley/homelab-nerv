@@ -10,6 +10,8 @@ spec:
     repoURL: https://github.com/staticparsley/homelab-nerv.git
     targetRevision: main
     path: sandbox/sops-test
+    plugin:
+      name: ksops-v1.0
 
   destination:
     server: https://kubernetes.default.svc
