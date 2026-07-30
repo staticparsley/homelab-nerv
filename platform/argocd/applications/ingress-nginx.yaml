@@ -16,6 +16,9 @@ spec:
         controller:
           service:
             type: LoadBalancer
+          config:
+            allow-snippet-annotations: "true"
+            annotation-risky-headers: Critical
 
   destination:
     server: https://kubernetes.default.svc
