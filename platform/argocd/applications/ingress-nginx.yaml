@@ -18,7 +18,7 @@ spec:
             type: LoadBalancer
           config:
             allow-snippet-annotations: "true"
-            annotation-risky-headers: "Critical"
+            annotation-risky-level: "Critical"
 
   destination:
     server: https://kubernetes.default.svc
