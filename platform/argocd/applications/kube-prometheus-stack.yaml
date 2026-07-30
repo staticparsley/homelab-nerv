@@ -43,6 +43,19 @@ spec:
               auth_style: InParams
           
         prometheus:
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+            hosts:
+              - prometheus.nerv.local
+            paths:
+              - /
+            pathType: Prefix
+            tls:
+              - secretName: prometheus-tls
+                hosts:
+                  - prometheus.nerv.local
+
           prometheusSpec:
             retention: 7d
             serviceMonitorSelectorNilUsesHelmValues: false
