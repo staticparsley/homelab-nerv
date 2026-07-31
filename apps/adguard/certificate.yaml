@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: adguard
+  namespace: adguard
+spec:
+  secretName: adguard-tls
+  dnsNames:
+    - adguard.nerv.local
+  issuerRef:
+    name: selfsigned
+    kind: ClusterIssuer
