@@ -1,0 +1,84 @@
+replicaCount: 1
+
+strategy:
+  type: Recreate
+
+persistence:
+  enabled: true
+  storageClass: local-path
+  size: 20Gi
+
+postgresql:
+  enabled: false
+
+postgresql-ha:
+  enabled: false
+
+redis-cluster:
+  enabled: false
+
+valkey:
+  enabled: false
+
+valkey-cluster:
+  enabled: false
+
+gitea:
+  config:
+    APP_NAME: NERV Forgejo
+
+    database:
+      DB_TYPE: sqlite3
+
+    server:
+      DOMAIN: forgejo.nerv.local
+      ROOT_URL: https://forgejo.nerv.local/
+      PROTOCOL: http
+      HTTP_PORT: 3000
+      SSH_DOMAIN: forgejo.nerv.local
+      SSH_PORT: 22
+      START_SSH_SERVER: true
+
+    service:
+      DISABLE_REGISTRATION: false
+      REQUIRE_SIGNIN_VIEW: false
+
+    repository:
+      DEFAULT_PRIVATE: private
+
+    session:
+      PROVIDER: file
+
+    cache:
+      ADAPTER: memory
+
+    queue:
+      TYPE: level
+
+service:
+  http:
+    type: ClusterIP
+    port: 3000
+
+  ssh:
+    type: ClusterIP
+    port: 22
+
+ingress:
+  enabled: true
+  className: nginx
+
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+
+  hosts:
+    - host: forgejo.nerv.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+  tls:
+    - secretName: forgejo-tls
+      hosts:
+        - forgejo.nerv.local
