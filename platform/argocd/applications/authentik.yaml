@@ -17,7 +17,7 @@ spec:
         valueFiles:
           - $values/platform/authentik/values.yaml
 
-    - repoURL: https://github.com/staticparsley/homelab-nerv.git
+    - repoURL: http://forgejo-http.forgejo.svc.cluster.local:3000/staticparsley/homelab-nerv.git
       targetRevision: main
       ref: values
 
