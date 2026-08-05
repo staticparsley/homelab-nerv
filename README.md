@@ -46,3 +46,7 @@ Ingress
 │ │
 Homepage Grafana
 AdGuard Argo CD
+
+## GitOps
+
+NERV uses Forgejo as the GitOps source of truth. GitHub is maintained as a public mirror.
