@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-tls-certs-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-tls-certs-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  forgejo.nerv.local: |
+    -----BEGIN CERTIFICATE-----
+    MIIE+zCCAuOgAwIBAgIRAPCq8ppHVVkqokEmizfDwPgwDQYJKoZIhvcNAQELBQAw
+    FzEVMBMGA1UEAxMMTkVSViBSb290IENBMB4XDTI2MDgwNTA0MDgwOFoXDTM2MDgw
+    MjA0MDgwOFowFzEVMBMGA1UEAxMMTkVSViBSb290IENBMIICIjANBgkqhkiG9w0B
+    AQEFAAOCAg8AMIICCgKCAgEAriC3QA9rugknX4rmmjPOZlt34xbbQTvwVf6XIBSq
+    04OtVmuNArnRIO0B5ocNr7/oIWcLg6TVdC8+QOOfSKVIgWQTSwVmjhnbkThAc+RE
+    fifH4byy6LUfZ9XS0PyUPmhctS/zDk26zHa5n/cIjAbRzNqi89wbbsp7ECMoLhG4
+    eXGVuGa02gzB5oiZFO6chy/GTIl461TpSoo7eULN5j676dsyMbRh6rArYuGtFPDl
+    1NbBz28ipZ2uIVuiOQREMYxC6yZw55wXjg3g5w+Fs3YwnHqJJNZbL011A1XjdDmA
+    TxAz/7feSsFVMjN/GFSEQfDL8dw5Vq53R0i66Lt9aPK4gupEyFrE5Cl/zPJcEIgk
+    doUA+Hs+prCGpZx3zSzFGVJZLndXgfRM1xmLtWNccFcEk9Uj6/Ys6MTeo64LQHdZ
+    bXDJG1ac6mtBQe7ycGMbHDDI0cOhpKCD/FhQpnU/e134GURlVHW8uPziRcSkYcVe
+    OnovInbSihPHl77ww03u/2o87hNYGUK8Se25iA5fqbA1MS/lCp/Yw2kcK87L747B
+    OvXMmWzBAnOaD2VqByGG2sfkXymjETz/++kysuEFbeFSx6X1EdV0hsJm3URK9sxk
+    skhNI+vcQhL+NszYzusCxkuCGRF1B5m5qqiN3k0H7zEnfJrVCAPNJmLeyj1k8oSF
+    5IsCAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wHQYD
+    VR0OBBYEFDimp1Q67uV7k8XhY0b4WKbWUi85MA0GCSqGSIb3DQEBCwUAA4ICAQA6
+    2RDjIUzvnQ5/AixMyAmT5rJuYdyrW9pyo0lmg8Oo904uJyOnODvVHdY+2orx8t7x
+    YZAgYXgHkJ63Wzyw4In7pvOjbNAsK8ptiNZxcLoDh4o921YNUXQHY10xE6QVOw/0
+    JYwMuEmN0QGPVxMIQh+lLc5dsLyUKY4oH2xgz6XiIW7X1ZdyXbO/e+WTenxsiK4s
+    EHMS04UAp2A2wzJGHV476dC8ydE6GOmjcXFBhQKmwi1hXo1IOOVyxHH/79h/a2lt
+    er0sf8mAdmwSXLznZ/UbbA9yit5jlRU9fOR/ZyZnQnrY87bIE0XXjvC7BdQ6W3ku
+    nLL8pqyy+dnBvurMVKS/G5CV6agijs5faW37aSoSZNDbZYv6PvgHWRt7k1pIOh/y
+    /+Z4rQrZW8DTJR/Xg3buKD6W2U0+o170QHc3khfG6pS6+5HilslUAPXf8bP5TsBj
+    HAe2h7FAwizISnluaPpRdEMUiFc1AM/XfRmkHwNwHIb9aEGzU7qGnCYysv1W6JL8
+    tifXPab3qNybTAc/+dnjbmXiWNMy6XwivLh9b7GorIyB9DQ5S3l89/ztXD7ovH43
+    Iad9iFjEpnX5c2JuN0D3pj+1ijgw8qKsNxnBjkRA1DoYUDBAiL0EsbgiyEdrFf5o
+    YY9LPZYXrsR6RoJx1mvPvxCg+gCsZDvf1w9QTy05tg==
+    -----END CERTIFICATE-----
